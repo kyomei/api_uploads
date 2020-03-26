@@ -45,7 +45,7 @@ function upload_images($image, $dir)
     $response = array();
     if (move_uploaded_file($image['tmp_name'], $target_dir . $tmpname)) {
         $response = array(
-            'url' => $_SERVER['REQUEST_SCHEME'] . '://' . $_SERVER['HTTP_HOST'] . '/uploads/'.explode('uploads/', $target_file)[1],
+            'url' => BASE_URL. 'uploads/'.explode('uploads/', $target_file)[1],
             'name' => $tmpname,
             'original_name' => $image['name'],
             'size' => $image['size'],
